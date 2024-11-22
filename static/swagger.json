@@ -1,0 +1,47 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "API de Atualizações",
+      "description": "API para atualização de dados das unidades"
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "schemes": ["http"],
+    "paths": {
+      "/atualizar": {
+        "post": {
+          "summary": "Atualiza dados de uma unidade",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "unidade": { "type": "string" },
+                  "contato": { "type": "string" },
+                  "valor": { "type": "number" },
+                  "desconto": { "type": "number" },
+                  "links": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Dados atualizados com sucesso",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "400": {
+              "description": "Erro na atualização"
+            }
+          }
+        }
+      }
+    }
+  }
+  
